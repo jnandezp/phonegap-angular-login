@@ -28,6 +28,7 @@ app.controller('NavBarController', function($scope){
 
   $scope.logOutFn = function(){
     localStorage.setItem('stringUser','');
+    // $.mobile.changePage( "index.html", { transition: "slideup", changeHash: false } );
     window.location = '/';
   };
 });
