@@ -1,14 +1,6 @@
-# A Blank PhoneGap App
+# A Angular PhoneGap App
 
 ## Usage
 
 ### PhoneGap CLI
-
-    $ phonegap create my-app --template blank
-
-### Desktop
-
-In your browser, open the file:
-
-    /www/index.html
-
+    ubicar los archivos ´agregar_server_php´ en localhost/
