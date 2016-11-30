@@ -1,5 +1,16 @@
 
-  <div ng-repeat="phone in $ctrl.phones">
-    <span>{{phone.name}}</span>
-    <p>{{phone.snippet}}</p>
+  <div ng-repeat="item in $ctrl.items">
+    <div class="row">
+      <div class="col-xs-3 text-center">
+        <img src="{{item.img}}" style="height:60px;width:60px;">
+      </div>
+      <div class="col-xs-6">
+        <span>{{item.name}}</span>
+        <p>{{item.snippet}}</p>
+      </div>
+      <div class="col-xs-3 text-center ">
+        <a href="detalle.html">
+          <i class="fa fa-chevron-right" style="padding-top: 20px;"></i>
+        </a>
+      </div>
   </div>

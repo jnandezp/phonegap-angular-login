@@ -55,7 +55,7 @@ function userLogin(email,password) {
       window.location = '/';
     },
     error: function searchError(xhr, err) {
-
+      alert('Error al tratar de iniciar sesion', 'Login Error');
     }
   });
 }
