@@ -8,6 +8,7 @@
         PhoneGap Team
     </author>
     <content src="index.html" />
+    <preference name="android-minSdkVersion" value="14" />
     <access origin="*" />
     <engine name="ios" spec="~4.3.0" />
 </widget>
