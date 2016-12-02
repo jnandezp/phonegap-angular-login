@@ -1,0 +1,23 @@
+<!-- Inicioa Menu -->
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavBarController">
+  <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <!-- <a class="navbar-brand" href="#">{{ brand }}</a> -->
+</nav>
+
+<div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" ng-controller="NavBarMenuController">
+  <a class="navmenu-brand visible-md visible-lg" href="#">Project name</a>
+  <ul class="nav navmenu-nav">
+    <li><a href="#">Link</a></li>
+    <div ng-if="!usuario">
+        <li><a class="" href="/login.html"><i class="fa fa-sign-in"></i> Entrar</a></li>
+    </div>
+    <div ng-if="usuario">
+      <li><a class="" ng-click="logOutFn()"><i class="fa fa-sign-out"></i> Salir</a></li>
+    </div>
+  </ul>
+</div>
+<!-- Fin Menu -->

@@ -12,9 +12,9 @@
         <meta name="msapplication-tap-highlight" content="no">
         <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
         <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
-        <!-- <link type="text/css" rel="stylesheet" href="lib/jquery/jquery.mobile.min.css"/> -->
+        <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/jasny-bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="css/index.css"/>
         <script type="text/javascript" src="lib/jquery/jquery.js"></script>
-        <!-- <script type="text/javascript" src="lib/jquery/jquery.mobile.min.js"></script> -->
         <script type="text/javascript" src="lib/angular/angular.min.js"></script>
         <script type="text/javascript" src="lib/angular/angular-route.js"></script>
         <script type="text/javascript" src="lib/angular/angular-resource.js"></script>
@@ -22,61 +22,64 @@
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/bootstrap/js/jasny-bootstrap.min.js"></script>
         <script type="text/javascript" src="js/app.module.js"></script>
         <script type="text/javascript" src="js/list-view/list-view.module.js"></script>
         <script type="text/javascript" src="js/list-view/list-view.component.js"></script>
         <title>Blank App</title>
     </head>
     <body ng-controller="MainController">
+      <!-- Inicioa Menu -->
+      <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavBarController">
+        <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="#">{{ brand }}</a> -->
+      </nav>
 
-      <nav class="navbar navbar-default" ng-controller="NavBarController">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">{{ brand }}</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            {{ navLogin }}
-              <li>
-                <div ng-if="usuario">
-                <a class="btn" ng-click="logOutFn()">Salir</a>
-              </div>
-              </li>
-
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <div class="">
-      <div ng-if="!usuario">
-        <a href="login.html" class="btn btn-primary btn-block">login</a>
+      <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" ng-controller="NavBarMenuController">
+        <a class="navmenu-brand visible-md visible-lg" href="#">Project name</a>
+        <ul class="nav navmenu-nav">
+          <li><a href="#">Link</a></li>
+          <div ng-if="!usuario">
+              <li><a class="" href="/login.html"><i class="fa fa-sign-in"></i> Entrar</a></li>
+          </div>
+          <div ng-if="usuario">
+            <li><a class="" ng-click="logOutFn()"><i class="fa fa-sign-out"></i> Salir</a></li>
+          </div>
+        </ul>
       </div>
+      <!-- Fin Menu -->
 
-      <list-view></list-view>
-
-    </div>
-        <script type="text/javascript">
-$( document ).ready(function(){})
-
-        </script>
+      <div id="page"><!-- Inicio Pagina -->
+        <list-view></list-view>
+      </div><!-- Fin Pagina -->
 
 
+      <footer>
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-2">
+            <i class="fa fa-search fa-2x"></i>
+            <div style="font-size:10px;">Buscar</div>
+          </div>
+          <div class="col-xs-2">
+            <i class="fa fa-filter fa-2x"></i>
+            <div style="font-size:10px;">Filtrar</div>
+          </div>
+          <div class="col-xs-2">
+            <i class="fa fa-upload fa-2x"></i>
+            <div style="font-size:10px;">Publicar</div>
+          </div>
+          <div class="col-xs-2">
+            <i class="fa fa-commenting-o  fa-2x"></i>
+            <div style="font-size:10px;">Contacto</div>
+          </div>
+        </div>
+      </footer>
+      <script type="text/javascript">
+        $( document ).ready(function(){})
+      </script>
     </body>
 </html>

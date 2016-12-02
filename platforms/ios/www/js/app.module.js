@@ -15,8 +15,10 @@ app.controller('MainController', function($scope){
 
 
 app.controller('NavBarController', function($scope){
-  $scope.navLogin = '<li><a href="login.html">Login</a></li>';
-  $scope.logout = "<li><a href='#' ng-click='logOutFn'>LogOut</a></li>"
+  $scope.brand = 'Tacksapp';
+});
+
+app.controller('NavBarMenuController', function($scope){
   var stringUser = localStorage.getItem('stringUser');
   if (stringUser) {
     var user = JSON.parse(stringUser);
